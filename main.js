@@ -12,23 +12,23 @@ greencarx=5;
 greencary=225;
 function add() {
 	//upload car, and background images on the canvas.
-	tag=new Image();
+	backgroundimg_tag=new Image();
     backgroundimg_tag.onload=upload_background;
-    backgroundimg_tag.src=backgroundimg;
-	backgroundimg_tag.onload=upload_greencar;
-    _tag=new Image();
+    backgroundimg_tag.src=background_image;
+	
+    greencar_tag=new Image();
     greencar_tag.onload=upload_greencar;
-	greencar.src=rover;
+	greencar_tag.src=greencar_image;
 }
 
-function upload_Background() {
+function upload_background() {
 	//Define function ‘uploadBackground’
 	ctx.drawImage(backgroundimg_tag,0,0,canvas.width,canvas.height);
 }
 
 function upload_greencar() {
 	//Define function ‘uploadgreencar’.
-	ctx.drawImage(greencar_tag,car2x,car2y,,car2_width,car2_height);
+	ctx.drawImage(greencar_tag,greencarx,greencary,car2_width,car2_height);
 	
 }
 
@@ -69,9 +69,9 @@ function my_keydown(e)
 function up()
 {
 	//Define function to move the car upward
-	if(carx>=0){
-		carx = carx - 10 ; 
-		console.log("when up arrow pressed x  , y=" + carx + cary)
+	if(greencary>=0){
+		greencary = greencary - 10 ; 
+		console.log("when up arrow pressed x  , y=" + greencarx + greencary)
 		upload_background();
 		upload_greencar();
 		  }
@@ -80,9 +80,9 @@ function up()
 function down()
 {
 	//Define function to move the car downward
-	if(cary>=400){
-		cary= cary + 10 ; 
-		console.log("when up arrow pressed x  , y=" + carx + cary)
+	if(greencary>=400){
+		greencary= greencary + 10 ; 
+		console.log("when up arrow pressed x  , y=" + greencarx + greencary)
 		upload_background();
 		upload_greencar();
 		  }
@@ -91,9 +91,9 @@ function down()
 function left()
 {
 	//Define function to move the car left side
-	if(carx>=0){
-		carx = carx - 10 ; 
-		console.log("when up arrow pressed x  , y=" + carx + cary)
+	if(greencarx>=0){
+		greencarx = greencarx - 10 ; 
+		console.log("when up arrow pressed x  , y=" + greencarx + greencary)
 		upload_background();
 		upload_greencar();
 		  }
@@ -102,9 +102,9 @@ function left()
 function right()
 {
 	//Define function to move the car right side
-	if(carx>=700){
-		carx = carx + 10 ; 
-		console.log("when up arrow pressed x  , y=" + carx + cary)
+	if(greencarx<=700){
+		greencarx = greencarx + 10 ; 
+		console.log("when up arrow pressed x  , y=" + greencarx + greencary)
 		upload_background();
 		upload_greencar();
 		  }
